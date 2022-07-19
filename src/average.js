@@ -19,6 +19,7 @@ const average = (arrayNumbers) => {
     }
     sumNumbers += arrayNumbers[index];
   }
+  
   return arrayNumbers.length > 0 ? Math.round(sumNumbers / arrayNumbers.length) : undefined;
 };
 console.log(average([]));
