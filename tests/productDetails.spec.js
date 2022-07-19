@@ -52,6 +52,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
       if(productDetails()[0] !== productDetails()[1]){
         return true
       }
+      
       return false
     }).toBeTruthy()
     // Teste se os dois productIds terminam com 123.
