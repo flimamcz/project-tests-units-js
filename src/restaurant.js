@@ -98,6 +98,21 @@ const createMenu = (obj) => {
     fetchMenu: () => obj,
     consumption: [],
     order: (request) => object.consumption.push(request),
+    pay: () => {
+      let sumTotal = 0;
+      // Object.values(object.fetchMenu()).map((item) => {
+      //   Object.values(item).map((value) => {
+      //      sumTotal += value;
+      //   });
+      // });
+
+      for (let item of Object.values(object.fetchMenu())) {
+        for (let value of Object.values(item)) {
+         sumTotal += value;
+        }
+      }
+      return sumTotal;
+    },
   };
 
   return object;

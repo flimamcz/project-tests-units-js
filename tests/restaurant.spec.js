@@ -153,6 +153,28 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     const objReturn = createMenu({ food: {}, drink: {} });
     objReturn.order('coxinha')
     expect(objReturn.consumption).toContain('coxinha')
-  })
+  });
+
+  it('6 - Verifica se, ao adicionar três pedidos, dentre bebidas e comidas, o array `objetoRetornado.consumption` contém os itens pedidos.', () => {
+    const objReturn = createMenu({ food: {}, drink: {} });
+    objReturn.order("coxinha");
+    objReturn.order("agua");
+    objReturn.order("sopa");
+    objReturn.order("sashimi");
+    expect(objReturn.consumption).toContain('coxinha', 'agua', 'sopa', 'sashimi')
+  });
+
+  it('7 - Verifica se a função `order` aceita que pedidos repetidos sejam acrescidos a `consumption`.', () => {
+    const objReturn = createMenu({ food: {}, drink: {} });
+    objReturn.order("coxinha");
+    objReturn.order("agua");
+    objReturn.order("coxinha");
+    expect(objReturn.consumption).toEqual(['coxinha', 'agua', 'coxinha'])
+  });
+
+  it('8 - Verifica se, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`', () => {
+    const objReturn = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 7.5} });
+    expect(objReturn.pay()).toBeCloseTo(25.2)
+  });
 
 });
