@@ -111,7 +111,7 @@ const createMenu = (obj) => {
          sumTotal += value;
         }
       }
-      return sumTotal;
+      return sumTotal * 1.1;
     },
   };
 

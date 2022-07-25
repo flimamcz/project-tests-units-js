@@ -174,7 +174,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
 
   it('8 - Verifica se, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`', () => {
     const objReturn = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 7.5} });
-    expect(objReturn.pay()).toBeCloseTo(25.2)
+    expect(objReturn.pay()).toBeCloseTo(27.72)
   });
 
 });
