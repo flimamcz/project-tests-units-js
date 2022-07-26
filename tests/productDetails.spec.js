@@ -56,5 +56,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
       return false
     }).toBeTruthy()
     // Teste se os dois productIds terminam com 123.
+    expect(productDetails('Alchool', 'Cerveja')[0].details.productId.endsWith('123')).toBeTruthy();
+    expect(productDetails('Alchool', 'Cerveja')[1].details.productId.endsWith('123')).toBeTruthy();
   });
 });
